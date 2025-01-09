@@ -1,0 +1,26 @@
+// Events Plugin Schema
+// Note: This extends the core schema by adding event-specific models
+
+model Event {
+  id             String    @id @default(uuid())
+  title          String
+  description    String?
+  startTime      DateTime
+  endTime        DateTime
+  location       String?
+  isAllDay       Boolean   @default(false)
+  recurrence     String?   // SINGLE or RECURRING
+  recurrenceRule String?   // Full RRULE string for recurring events
+  metadata       String?   // JSON string for additional data
+  userId         String
+  user           User      @relation("UserEvents", fields: [userId], references: [id], onDelete: Cascade)
+  taskId         String?   // Optional link to a task
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  familyId       String
+  family         Family    @relation(fields: [familyId], references: [id], onDelete: Cascade)
+
+  @@index([familyId])
+  @@index([userId])
+  @@index([taskId])
+}
