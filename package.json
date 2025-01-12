@@ -17,8 +17,10 @@
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
+    "@hono/node-server": "^1.13.7",
     "@prisma/client": "^5.22.0",
     "@types/rrule": "^2.2.9",
+    "familymanager-sdk": "file:../FamilyManager-SDK",
     "hono": "^3.0.0",
     "rrule": "^2.8.1",
     "zod": "^3.24.1"
@@ -34,7 +36,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/fm-events-plugin.git"
+    "url": "git+https://github.com/steiner385/fm-events.git"
   },
   "keywords": [
     "events",
@@ -44,7 +46,7 @@
   "author": "Your Name",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/your-username/fm-events-plugin/issues"
+    "url": "https://github.com/steiner385/fm-events/issues"
   },
-  "homepage": "https://github.com/your-username/fm-events-plugin#readme"
+  "homepage": "https://github.com/steiner385/fm-events#readme"
 }
